@@ -38,10 +38,9 @@ const displayPhones = (phones, isShowAll) => {
                         alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                      <h2 class="card-title">${phone.phone_name}</h2>
-                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <h2 class="card-title inline-block text-center text-[26px]">${phone.phone_name}</h2>
                       <div class="card-actions justify-center">
-                        <button onclick="handleShowDetail('${phone.slug}')" class="btn btn-primary">Show Details</button>
+                        <button onclick="handleShowDetail('${phone.slug}')" class="btn btn-primary mt-4">Show Details</button>
                       </div>
                     </div>
         `;
@@ -54,7 +53,7 @@ const displayPhones = (phones, isShowAll) => {
   else{
     console.log(phones.length);
     const phoneContainer = document.getElementById('phone-container');
-    phoneContainer.innerHTML=`<p class='text-6xl font-bold text-center flex justify-center items-center h-10'>No data found</p>`
+    phoneContainer.innerHTML=`<p class='text-4xl font-bold w-[96rem] mx-auto mt-48 text-center'>No phone available by this name ☹</p>`
     const showAllContainer = document.getElementById('show-all-container');
     showAllContainer.classList.add('hidden');
   }
@@ -76,19 +75,22 @@ const handleShowDetail = async(id) => {
 const showPhoneDetails = (phone) => {
   console.log(phone);
   const phoneName = document.getElementById('show-detail-phone-name');
-  phoneName.innerText = `${phone.name}`;
+  phoneName.innerHTML = `<h2 class='text-3xl my-4 text-center'> ${phone.name} </h2>`;
   const showDetailContainer = document.getElementById('show-detail-container');
   showDetailContainer.innerHTML = `
+    <div class="w-40 mx-auto">
     <img src="${phone.image}" alt= ""/>
-    <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
-    <p><span>Display Size:</span>${phone?.mainFeatures?.displaySize}</p>
-    <p><span>Chipset:</span>${phone?.mainFeatures?.chipSet}</p>
-    <p><span>Memory:</span>${phone?.mainFeatures?.memory}</p>
-    <p><span>Slug:</span>${phone?.slug}</p>
-    <p><span>Release data:</span>${phone?.releaseDate}</p>
-    <p><span>Brand:</span>${phone?.
-      brand}</p>
-    <p><span>GPS:</span>${phone?.others?.GPS}</p>
+    </div>
+    <div class="mt-8">
+    <p class="my-2"><span class="font-bold">Storage: </span>${phone?.mainFeatures?.storage}</p>
+    <p class="my-2"><span class="font-bold">Display Size: </span>${phone?.mainFeatures?.displaySize}</p>
+    <p class="my-2"><span class="font-bold">Chipset: </span>${phone?.mainFeatures?.chipSet}</p>
+    <p class="my-2"><span class="font-bold">Memory: </span>${phone?.mainFeatures?.memory}</p>
+    <p class="my-2"><span class="font-bold">Slug: </span>${phone?.slug}</p>
+    <p class="my-2"><span class="font-bold">Release data: </span>${phone?.releaseDate || "Not found"}</p>
+    <p class="my-2"><span class="font-bold">Brand: </span>${phone?. brand}</p>
+    <p class="my-2"><span class="font-bold">GPS: </span>${phone?.others?.GPS || "Not available"}</p>
+    </div>
   `;
   // show the modal
   show_details_modal.showModal();
