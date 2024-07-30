@@ -37,8 +37,8 @@ const displayPhones = (phones, isShowAll) => {
                         src="${phone.image}"
                         alt="Shoes" />
                     </figure>
-                    <div class="card-body">
-                      <h2 class="card-title inline-block text-center text-[26px]">${phone.phone_name}</h2>
+                    <div class="card-body items-center text-center">
+                      <h2 class="card-title text-[26px]">${phone.phone_name}</h2>
                       <div class="card-actions justify-center">
                         <button onclick="handleShowDetail('${phone.slug}')" class="btn btn-primary mt-4">Show Details</button>
                       </div>
