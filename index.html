@@ -31,12 +31,31 @@
                 <span class="loading loading-spinner loading-lg text-primary"></span>
             </div>
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                </div>
-                <!-- show all button -->
-                <div id="show-all-container" class="hidden text-center my-8">
-                    <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
-                </div>
+            </div>
+            <!-- show all button -->
+            <div id="show-all-container" class="hidden text-center my-8">
+                <button onclick="handleShowAll()" class="btn btn-accent">Show All</button>
+            </div>
         </section>
+
+        <!-- Show details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 id="show-detail-phone-name" class="text-3xl font-bold">Hello!</h3>
+                <div id="show-detail-container">
+                    
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
     </main>
     <footer>
         <script src="js/phone.js"></script>
