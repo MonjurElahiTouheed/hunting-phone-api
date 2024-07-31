@@ -76,8 +76,8 @@ const showPhoneDetails = (phone) => {
   phoneName.innerHTML = `<h2 class='text-3xl my-4 text-center'> ${phone.name} </h2>`;
   const showDetailContainer = document.getElementById('show-detail-container');
   showDetailContainer.innerHTML = `
-    <div class="w-40 mx-auto">
-    <img src="${phone.image}" alt= ""/>
+    <div class="relative w-[25rem] h-[18rem] mx-auto bg-[#F3F7FF]">
+    <img class="absolute top-[2.25rem] left-[7.25rem]" src="${phone.image}" alt= ""/>
     </div>
     <div class="mt-8">
     <p class="my-2"><span class="font-bold">Storage: </span>${phone?.mainFeatures?.storage}</p>
