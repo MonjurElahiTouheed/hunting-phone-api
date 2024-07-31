@@ -7,11 +7,11 @@ const loadPhone = async (searchText='13', isShowAll) => {
 }
 
 const displayPhones = (phones, isShowAll) => {
-  if(phones.length){
   const phoneContainer = document.getElementById('phone-container');
+  const showAllContainer = document.getElementById('show-all-container');
+  if(phones.length){
   // clear phone container cards before adding new cards
   phoneContainer.textContent = '';
-    const showAllContainer = document.getElementById('show-all-container');
     if(phones.length > 12 && !isShowAll){
       showAllContainer.classList.remove('hidden');
     }
@@ -52,9 +52,7 @@ const displayPhones = (phones, isShowAll) => {
   }
   else{
     console.log(phones.length);
-    const phoneContainer = document.getElementById('phone-container');
     phoneContainer.innerHTML=`<p class='text-4xl font-bold w-[96rem] mx-auto mt-48 text-center'>No phone available by this name ☹</p>`
-    const showAllContainer = document.getElementById('show-all-container');
     showAllContainer.classList.add('hidden');
   }
   // hide loading spinner
